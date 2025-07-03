@@ -7,19 +7,26 @@ public class Diary{
         }
         return false;
     }
-    public void addEntry(){
+    public void addEntry(String title){
+         Entry entry = new Entry();
+         entry.setTitle(title);
+         entry.setTimestamp();
+         entries.add(entry);
 
     }
     public void removeEntry(){
 
     }
     public void listEntrys(){
+        System.out.println("These are your current entries");
+        int i = 0;
         for(Entry entry: entries){
-            System.out.println(entry.getTitle());
+            System.out.println(++i + ") " + entry.getTitle());
         }
     }
-    public void OpenEntry(){
-
+    public void OpenEntry(int number){
+        Entry entry = entries.get(number + 1);
+        entry.getData();
     }
     public void closeEntry(){
 
