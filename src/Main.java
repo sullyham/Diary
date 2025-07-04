@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        new MyFrame();
         Scanner scnr = new Scanner(System.in);
         Calendar calendar = Calendar.getInstance();
         System.out.println("Welcome to diary app!");
