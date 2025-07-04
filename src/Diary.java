@@ -31,9 +31,9 @@ public class Diary{
         Scanner scnr = new Scanner(System.in);
         Boolean exit = false;
         Entry entry = entries.get(number -1);
-        System.out.println(entry.getData());
+        System.out.print(entry.getData());
         String text = "";
-        text = scnr.next();
+        text = scnr.nextLine();
         entry.setData(text);
     }
     public void closeEntry(){
