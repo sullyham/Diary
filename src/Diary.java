@@ -1,4 +1,6 @@
 import java.util.ArrayList;
+import java.util.Scanner;
+
 public class Diary{
     ArrayList<Entry> entries = new ArrayList<>();
     public boolean IsEmpty(){
@@ -25,8 +27,14 @@ public class Diary{
         }
     }
     public void OpenEntry(int number){
-        Entry entry = entries.get(number + 1);
-        entry.getData();
+        //So we need it to loop until the user stops writing
+        Scanner scnr = new Scanner(System.in);
+        Boolean exit = false;
+        Entry entry = entries.get(number -1);
+        System.out.println(entry.getData());
+        String text = "";
+        text = scnr.next();
+        entry.setData(text);
     }
     public void closeEntry(){
 
