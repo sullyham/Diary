@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        new MyFrame();
+        MyFrame frame = new MyFrame();
+        frame.setVisible(true);
         Diary diary = new Diary();
     }
 }

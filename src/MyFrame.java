@@ -1,14 +1,17 @@
+import javax.smartcardio.Card;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.util.concurrent.Flow;
 
 public class MyFrame extends JFrame {
+
     public MyFrame(){
         //Frame settings
         setVisible(true);
         setSize(600,400);
         setTitle("Diary App");
-
+        setLayout(new FlowLayout());
 
 
         //Components
@@ -17,18 +20,21 @@ public class MyFrame extends JFrame {
         JPanel adder = new JPanel();
 
 
+
         //Add/remove settings
-        add.addActionListener(new Add());
+        Add instant = new Add();
+        add.addActionListener(instant);
+
+        instant.something(this);
         delete.addActionListener(new Remove());
         adder.add(add);
         adder.add(delete);
-        adder.add(new JLabel("                           J1"));
 
 
 
 
 
         //Adding components to frame
-        this.add(adder);
+        this.add(adder,BorderLayout.WEST);
     }
 }
