@@ -9,23 +9,22 @@ public class MyFrame extends JFrame {
     public MyFrame(){
         //Frame settings
         setVisible(true);
-        setSize(600,400);
+        setResizable(false);
+        setSize(1000,600);
         setTitle("Diary App");
-        setLayout(new FlowLayout());
-
 
         //Components
         JButton add = new JButton("+");
         JButton delete = new JButton("-");
         JPanel adder = new JPanel();
-
-
+        adder.setLayout(new GridLayout(0,2));
 
         //Add/remove settings
         Add instant = new Add();
         add.addActionListener(instant);
+        instant.pass(adder);
 
-        instant.something(this);
+
         delete.addActionListener(new Remove());
         adder.add(add);
         adder.add(delete);
@@ -35,6 +34,7 @@ public class MyFrame extends JFrame {
 
 
         //Adding components to frame
-        this.add(adder,BorderLayout.WEST);
+        this.add(adder);
+       // this.add(new JEditorPane(), BorderLayout.CENTER);
     }
 }

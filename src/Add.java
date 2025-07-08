@@ -2,20 +2,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 public class Add implements ActionListener {
-private MyFrame frame;
+private JPanel panel;
 
-   public void something(MyFrame frame){
-       this.frame = frame;
+   public void pass(JPanel panel){
+       this.panel = panel;
    }
+
 
 
     @Override
     public void actionPerformed(ActionEvent e) {
-    JButton button = new JButton("J1");
-    frame.add(new JButton("J1"), FlowLayout.CENTER);
-    frame.revalidate();
+        String path = JOptionPane.showInputDialog(null,"Select a name for your entry","New entry", JOptionPane.INFORMATION_MESSAGE);
+        JButton button = new JButton(path);
+    panel.add(button);
+    panel.revalidate();
     }
 
 }
