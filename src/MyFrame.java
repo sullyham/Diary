@@ -10,31 +10,23 @@ public class MyFrame extends JFrame {
         //Frame settings
         setVisible(true);
         setResizable(false);
-        setSize(1000,600);
+        setSize(800,600);
         setTitle("Diary App");
-
-        //Components
-        JButton add = new JButton("+");
-        JButton delete = new JButton("-");
-        JPanel adder = new JPanel();
-        adder.setLayout(new GridLayout(0,2));
-
-        //Add/remove settings
-        Add instant = new Add();
-        add.addActionListener(instant);
-        instant.pass(adder);
-
-
-        delete.addActionListener(new Remove());
-        adder.add(add);
-        adder.add(delete);
+        setResizable(true);
+        JPanel title = new JPanel();
+        title.setLayout(new BorderLayout());
+        JLabel top = new JLabel("My Diary");
+        top.setFont(new Font("Serif", Font.PLAIN, 30));
+        top.setHorizontalAlignment(SwingConstants.CENTER);
+        title.add(top, BorderLayout.CENTER);
+        title.setBackground(Color.PINK);
+        title.setPreferredSize(new Dimension(100,100));
+        JPanel sidemenu = new JPanel();
+        sidemenu.setPreferredSize(new Dimension(200,100));
+        sidemenu.setBackground(new Color(217, 179, 255));
+        add(title, BorderLayout.NORTH);
+        add(sidemenu, BorderLayout.WEST);
 
 
-
-
-
-        //Adding components to frame
-        this.add(adder);
-       // this.add(new JEditorPane(), BorderLayout.CENTER);
     }
 }
